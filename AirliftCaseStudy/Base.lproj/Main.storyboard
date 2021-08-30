@@ -1,24 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Gallery View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="GalleryViewController" customModule="AirliftCaseStudy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="p9A-Hz-cRz">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UgP-1v-nav">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" systemColor="labelColor"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Photo Library" id="C7K-JP-C7N"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="UgP-1v-nav" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4hW-92-HkU"/>
+                            <constraint firstItem="UgP-1v-nav" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Nzh-oF-feA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="p9A-Hz-cRz" secondAttribute="trailing" id="PVZ-Wj-HNf"/>
+                            <constraint firstItem="p9A-Hz-cRz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="mlY-5u-dWJ"/>
+                            <constraint firstItem="UgP-1v-nav" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ne3-nl-ZZ0"/>
+                            <constraint firstAttribute="bottom" secondItem="p9A-Hz-cRz" secondAttribute="bottom" id="pkH-9j-pBd"/>
+                            <constraint firstItem="UgP-1v-nav" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="rGg-LN-vO6"/>
+                            <constraint firstItem="p9A-Hz-cRz" firstAttribute="top" secondItem="UgP-1v-nav" secondAttribute="bottom" id="xca-7N-SlW"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="navigationBar" destination="UgP-1v-nav" id="LtH-Al-IiY"/>
+                        <outlet property="tableView" destination="p9A-Hz-cRz" id="KbD-dg-jyH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="30" y="77"/>
+        </scene>
+        <!--Image View Controller-->
+        <scene sceneID="fAM-QH-eT0">
+            <objects>
+                <viewController storyboardIdentifier="ImageViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cNd-rC-hhw" customClass="ImageViewController" customModule="AirliftCaseStudy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1Qr-ih-j8q">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oma-5Z-azV">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="oyP-pv-gDi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="oyP-pv-gDi" firstAttribute="trailing" secondItem="oma-5Z-azV" secondAttribute="trailing" id="3hz-dG-2S6"/>
+                            <constraint firstItem="oma-5Z-azV" firstAttribute="leading" secondItem="oyP-pv-gDi" secondAttribute="leading" id="3zP-D3-adX"/>
+                            <constraint firstItem="oyP-pv-gDi" firstAttribute="bottom" secondItem="oma-5Z-azV" secondAttribute="bottom" id="Fft-ji-48W"/>
+                            <constraint firstItem="oma-5Z-azV" firstAttribute="top" secondItem="oyP-pv-gDi" secondAttribute="top" id="MfN-3P-VXm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="ImageView" destination="oma-5Z-azV" id="xKK-T6-rjy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hKS-4J-VMr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="758" y="76"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
